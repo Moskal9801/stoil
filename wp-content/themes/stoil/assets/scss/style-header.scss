@@ -1,0 +1,397 @@
+header {
+  .header-header {
+    background: white;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.06);
+    height: 155px;
+    display: flex;
+    align-items: center;
+    position: fixed;
+    z-index: 11;
+    top: 0;
+    left: 0;
+    right: 0;
+    .header__desktop {
+      display: block;
+      .header__top,
+      .header__bottom {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .header__top {
+
+        .header__logo {
+
+          a {
+            display: block;
+
+            @include hover {
+
+              img {
+                opacity: .6;
+              }
+            }
+
+            img {
+              display: block;
+            }
+          }
+        }
+
+        .header__cart {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+
+          .basket__all {
+            display: none;
+            align-items: center;
+            justify-content: center;
+            width: 28px;
+            height: 28px;
+            font-family: $default;
+            font-weight: 500;
+            font-size: 16px;
+            line-height: 20px;
+            color: white;
+            background-color: $lightgreen;
+            border-radius: 100%;
+          }
+
+          a {
+            margin-left: 10px;
+            @include hover {
+
+              svg {
+
+                path,
+                circle {
+                  stroke: $lightgreen;
+                }
+              }
+            }
+          }
+        }
+      }
+
+      .header__bottom {
+        margin-top: 9px;
+
+        nav {
+
+          .menu {
+            display: flex;
+
+            .current-menu-item {
+              a {
+                color: $lightgreen;
+              }
+            }
+
+            li {
+
+              a {
+                font-weight: 500;
+                font-size: 16px;
+                line-height: 20px;
+
+                @include hover {
+                  color: $lightgreen;
+                }
+              }
+
+              + li {
+                margin-left: 25px;
+              }
+            }
+          }
+        }
+
+        .header__btn-wrap {
+          display: flex;
+          align-items: center;
+
+          .btn {
+
+            + .btn {
+              margin-left: 20px;
+            }
+          }
+        }
+      }
+    }
+    .header__mobile {
+      display: none;
+    }
+  }
+  .header-menu {
+    display: none;
+  }
+}
+
+@include small-laptop {
+  header {
+    .header-header {
+      .header__desktop {
+        .header__bottom {
+          nav {
+            .menu {
+              li {
+                a {
+                  font-size: 14px;
+                  line-height: 17px;
+                }
+                + li {
+                  margin-left: 20px;
+                }
+              }
+            }
+          }
+          .header__btn-wrap {
+            .btn {
+              span {
+                font-size: 14px;
+                line-height: 17px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@include tablet {
+  header {
+    .header-header {
+      height: 100px;
+      .header__desktop {
+        display: none;
+      }
+      .header__mobile {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .mobile__logo {
+          display: block;
+          width: 113px;
+          height: 54px;
+          img {
+            width: 100%;
+            height: 100%;
+          }
+        }
+        .mobile__logo-active {
+          display: none;
+        }
+        .mobile__content {
+          display: flex;
+          align-items: center;
+          .content__order {
+            padding: 15px 25px;
+            border: 2px solid $lightgreen;
+            border-radius: 7px;
+            font-family: $default;
+            font-weight: 500;
+            font-size: 16px;
+            line-height: 20px;
+            color: white;
+            background-color: $lightgreen;
+            @include hover {
+              color: $lightgreen;
+              background-color: white;
+            }
+          }
+          .content__basket {
+            margin-left: 15px;
+          }
+          .content__burger {
+            margin-left: 15px;
+            gap: 6px !important;
+            justify-content: center !important;
+          }
+        }
+      }
+      &.active {
+        background-color: $dark;
+        .header__mobile {
+          .mobile__logo {
+            display: none;
+          }
+          .mobile__logo-active {
+            display: block;
+            width: 113px;
+            height: 54px;
+            img {
+              width: 100%;
+              height: 100%;
+            }
+          }
+          .mobile__content {
+            .content__basket {
+              svg {
+                path {
+                  stroke: white;
+                }
+                circle {
+                  stroke: white;
+                }
+              }
+            }
+          }
+        }
+      }
+      &.hide {
+        transform: translateY(-150px)!important;
+      }
+      &.no-hide {
+        transform: translateY(0px)!important;
+      }
+    }
+    .header-menu {
+      display: block;
+      overflow: auto;
+      padding-top: 15px;
+      padding-bottom: 30px;
+      max-height: calc(100vh - 100px);
+      height: 100%;
+      top: -1500px;
+      left: 0;
+      right: 0;
+      position: absolute;
+      z-index: 10;
+      background-color: $dark;
+      > div {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        max-width: 365px;
+      }
+      .menu__orders {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        width: 100%;
+        a {
+          padding: 15px 20px;
+          border: 2px solid $lightgreen;
+          border-radius: 7px;
+          font-family: $default;
+          font-weight: 500;
+          font-size: 16px;
+          line-height: 20px;
+          color: $lightgreen;
+          background-color: $dark;
+          &:last-child {
+            padding: 15px 10px;
+          }
+          @include hover {
+            color: white;
+            background-color: $lightgreen;
+          }
+        }
+      }
+      .menu__nav {
+        margin-top: 50px;
+        ul {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          li {
+            margin-top: 30px;
+            a {
+              font-family: $default;
+              font-weight: 500;
+              font-size: 23px;
+              line-height: 28px;
+              color: white;
+              @include hover {
+                color: $lightgreen;
+              }
+            }
+            &:first-child {
+              margin-top: unset;
+            }
+          }
+        }
+      }
+      .menu__contacts {
+        display: flex;
+        flex-direction: column;
+        margin-top: 45px;
+        padding-top: 40px;
+        border-top: 2px solid $footergray;
+        .contacts__questions {
+          font-family: $title;
+          font-weight: 700;
+          font-size: 20px;
+          line-height: 20px;
+          color: white;
+          span {
+            color: $lightgreen;
+          }
+        }
+        .contacts__socials {
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+          margin-top: 30px;
+          a {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            padding: 15px 20px;
+            border: 2px solid $lightgreen;
+            background-color: $lightgreen;
+            border-radius: 7px;
+            p {
+              font-family: $default;
+              font-weight: 500;
+              font-size: 16px;
+              line-height: 20px;
+              color: white;
+            }
+            svg {
+              margin-left: 10px;
+            }
+            @include hover {
+              background-color: $dark;
+              p {
+                color: $lightgreen;
+              }
+              svg {
+                rect {
+                  stroke: $lightgreen;
+                  fill: $dark;
+                }
+              }
+            }
+          }
+        }
+        .contacts__phone {
+          margin-top: 20px;
+          font-family: $default;
+          font-weight: 700;
+          font-size: 35px;
+          line-height: 43px;
+          color: white;
+          @include hover {
+            color: $lightgreen;
+          }
+        }
+      }
+      &.active {
+        top: 100px;
+      }
+    }
+  }
+}
+
+@include horizontal-mobile {
+  header {
+    .header-menu {
+      max-height: calc(100vh - 155px);
+    }
+  }
+}

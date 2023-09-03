@@ -1,0 +1,8 @@
+# START YOAST BLOCK
+# ---------------------------
+User-agent: *
+Disallow:
+
+Sitemap: http://st-oil.eesdown3.beget.tech/sitemap_index.xml
+# ---------------------------
+# END YOAST BLOCK

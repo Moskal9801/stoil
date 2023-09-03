@@ -1,0 +1,26 @@
+@keyframes push-pop-pushed {
+  0%, 72.5% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(0, 100%);
+  }
+}
+
+@keyframes push-pop-flip {
+  0% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  50% {
+    transform: translate(0, -80px) rotate(90deg);
+  }
+  100% {
+    transform: translate(0, 0) rotate(180deg);
+  }
+}
+
+@keyframes push-pop-slide {
+  to {
+    transform: translate(0, -100%) translate(80px, 0);
+  }
+}

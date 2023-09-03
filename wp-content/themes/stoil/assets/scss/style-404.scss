@@ -1,0 +1,94 @@
+.error-404 {
+  .error-404__contents {
+    padding: unset;
+    display: flex;
+    align-items: center;
+    background-image: url("/wp-content/themes/stoil/assets/images/404-background.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100vw;
+    height: calc(100vh - 155px);
+    .contents__content {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding-top: 55px;
+      padding-bottom: 55px;
+      background: linear-gradient(322.91deg, rgba(255, 255, 255, 0.16) 12.81%, rgba(255, 255, 255, 0) 105.38%);
+      box-shadow: inset 0px 0px 4px 3px rgba(255, 255, 255, 0.14);
+      backdrop-filter: blur(11px);
+      border-radius: 70px;
+      .content-404 {
+        font-family: $title;
+        font-weight: 700;
+        font-size: 185px;
+        line-height: 136px;
+        color: white;
+      }
+      .content-error {
+        font-family: $title;
+        font-weight: 700;
+        font-size: 150px;
+        line-height: 150px;
+        color: white;
+        &:first-letter {
+          text-transform: lowercase !important;
+        }
+      }
+      .content-page {
+        margin-top: 27px;
+        font-family: $default;
+        font-weight: 500;
+        font-size: 24px;
+        line-height: 50px;
+        color: white;
+      }
+      .content-button {
+        padding: 15px 40px;
+        margin-top: 16px;
+        font-family: $default;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 20px;
+        border: 2px solid $lightgreen;
+        border-radius: 7px;
+        background-color: $lightgreen;
+        color: white;
+        @include hover {
+          background-color: white;
+          color: $lightgreen;
+        }
+      }
+    }
+  }
+}
+
+@include small-tablet {
+  .error-404 {
+    .error-404__contents {
+      height: calc(100vh - 100px);
+      .contents__content {
+        padding-top: 100px;
+        padding-bottom: 100px;
+        margin: 0 15px;
+        .content-404 {
+          font-size: 120px;
+          line-height: 87px;
+        }
+        .content-error {
+          font-size: 98px;
+          line-height: 97px;
+        }
+        .content-page {
+          margin-top: 10px;
+          font-size: 20px;
+        }
+        .content-button {
+          margin-top: 20px;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,187 @@
+.services {
+  .services-service {
+    padding-top: 65px;
+    padding-bottom: 150px;
+    .services-service__contents {
+      .contents__info {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        .info__left-content {
+          display: flex;
+          flex-direction: column;
+          max-width: 500px;
+          width: 100%;
+          .left-content__title {
+            font-family: $title;
+            font-weight: 700;
+            font-size: 50px;
+            line-height: 48px;
+            color: black;
+          }
+          .left-content__text {
+            margin-top: 50px;
+            font-family: $default;
+            font-weight: 400;
+            font-size: 25px;
+            line-height: 35px;
+            color: black;
+          }
+        }
+        .info__right-content {
+          max-width: 570px;
+          width: 100%;
+          height: auto;
+          img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-bottom-left-radius: 30px;
+            border-top-right-radius: 30px;
+          }
+        }
+      }
+      .contents__advantages {
+        display: flex;
+        flex-direction: row;
+        margin-top: 50px;
+        .advantages__advantage {
+          display: flex;
+          flex-direction: column;
+          padding: 30px 30px 70px 30px;
+          border: 2px solid $lightgreen;
+          border-radius: 15px;
+          max-width: 370px;
+          width: 100%;
+          margin-left: 30px;
+          &:first-child {
+            margin-left: unset;
+          }
+          .advantage__title {
+            font-family: $default;
+            font-weight: 500;
+            font-size: 24px;
+            line-height: 24px;
+            color: black;
+          }
+          .advantage__texts {
+            display: flex;
+            flex-direction: column;
+            margin-top: 25px;
+            .texts__text {
+              margin-top: 30px;
+              display: flex;
+              flex-direction: row;
+              &:first-child {
+                margin-top: unset;
+              }
+              svg {
+                margin-top: 7px;
+              }
+              p {
+                max-width: 290px;
+                width: 100%;
+                margin-left: 10px;
+                font-family: $default;
+                font-weight: 400;
+                font-size: 14px;
+                line-height: 19px;
+                color: black;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@include small-laptop {
+  .services {
+    .services-service {
+      .services-service__contents {
+        .contents__info {
+          .info__right-content {
+            max-width: 470px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@include tablet {
+  .services {
+    .services-service {
+      .services-service__contents {
+        .contents__info {
+          flex-direction: column;
+          .info__left-content {
+            max-width: 1024px;
+          }
+          .info__right-content {
+            margin-top: 40px;
+            max-width: 1024px;
+          }
+        }
+        .contents__advantages {
+          flex-direction: column;
+          .advantages__advantage {
+            padding: 30px;
+            max-width: 1024px;
+            margin-left: unset;
+            margin-top: 30px;
+            &:first-child {
+              margin-top: unset;
+            }
+            .advantage__texts {
+              .texts__text {
+                p {
+                  max-width: 964px;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@include small-tablet {
+  .services {
+    .services-service {
+      padding-top: 40px;
+      padding-bottom: 80px;
+      .services-service__contents {
+        .contents__info {
+          .info__left-content {
+            .left-content__title {
+              font-size: 35px;
+            }
+            .left-content__text {
+              margin-top: 30px;
+              font-size: 16px;
+              line-height: 22px;
+            }
+          }
+        }
+        .contents__advantages {
+          margin-top: 30px;
+          .advantages__advantage {
+            padding: 20px;
+            .advantage__title {
+              font-size: 20px;
+            }
+            .advantage__texts {
+              margin-top: 20px;
+              .texts__text {
+                margin-top: 20px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

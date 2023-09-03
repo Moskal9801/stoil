@@ -1,0 +1,60 @@
+$lightgreen: 		#7AB92F;
+$green: 			#216B27;
+$darkgreen: 		#232C26;
+$dark:              #262626;
+$lightgray: 		#F6F6F6;
+$gray: 				#D1D1D1;
+$middlegray: 		#B5B5B5;
+$footergray:        #626262;
+
+$green-gradient: 	linear-gradient(111.51deg, #7AB92F 4.9%, #216B27 91.14%);
+$gray-gradient: 	linear-gradient(287.36deg, rgba(218, 255, 185, 0.5) 11.85%, rgba(255, 255, 255, 0.135) 39.4%, rgba(255, 255, 255, 0.335) 96.33%);
+$rainbow-gradient: 	linear-gradient(146.2deg, #FFC700 -2.74%, #4BF4FF 79.95%);;
+
+$default: 'Cera Pro';
+$title: 'TT Supermolot Neue Exp';
+$transition: all .3s ease-out;
+
+@import "choices";
+@import "reset";
+@import "fonts";
+@import "mixins";
+@import "magnific-popup";
+@import "animate";
+@import "sal";
+@import "swiper-bundle";
+@import "hamburger";
+@import "default";
+
+@import "style-header";
+@import "style-footer";
+@import "style-home";
+@import "style-catalog";
+@import "style-about";
+@import "style-service";
+@import "style-news";
+@import "style-buyers";
+@import "style-contacts";
+@import "style-basket";
+@import "style-inner";
+@import "style-404";
+@import "style-popup";
+@import "style-oil-and-lubricant";
+
+html {
+  .mfp-close_icon {
+    background-image: url("/wp-content/themes/stoil/assets/images/closed.png");
+    background-position-x: calc(100% - 5px);
+    background-position-y: center;
+    background-repeat: no-repeat;
+    cursor: pointer !important;
+  }
+  section {
+    padding: 100px 0;
+    position: relative;
+  }
+  &.no-scroll {
+    overflow: hidden;
+  }
+}
+

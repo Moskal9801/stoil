@@ -1,0 +1,196 @@
+html {
+  background-color: white;
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+
+  * {
+    font-family: $default;
+    font-style: normal;
+    color: black;
+    transition: $transition;
+
+    &:first-letter {
+      text-transform: uppercase;
+    }
+  }
+
+  a {
+    text-decoration: unset;
+  }
+
+  body::-webkit-scrollbar {
+    width: 15px;
+  }
+
+  body::-webkit-scrollbar-track {
+    background: white;
+  }
+
+  body::-webkit-scrollbar-thumb {
+    background-color: $lightgreen;
+    border-radius: 7px;
+    border: 3px solid white;
+  }
+
+  body {
+    scrollbar-width: thin;
+    scrollbar-color: $green white;
+    overflow: hidden;
+  }
+
+  .text-left {
+    text-align: left;
+  }
+
+  .text-center {
+    text-align: center;
+  }
+
+  .text-right {
+    text-align: right;
+  }
+
+  body {
+    padding-top: 155px;
+  }
+
+  @include tablet {
+    body {
+      padding-top: 100px;
+    }
+  }
+
+  // if autorized
+  .customize-support {
+
+    header {
+      top: 32px;
+    }
+
+    @include horizontal-mobile {
+      margin-top: 0px;
+    }
+  }
+
+  .container {
+    width: 100%;
+    max-width: 1200px;
+    padding: 0 15px;
+    margin: 0 auto;
+    position: relative;
+
+    @include horizontal-mobile {
+      max-width: 100%;
+    }
+  }
+
+  .container-inner {
+    width: 100%;
+    max-width: 750px;
+    position: relative;
+
+    @include horizontal-mobile {
+      max-width: 100%;
+    }
+  }
+
+  .container-404 {
+    width: 100%;
+    max-width: 800px;
+    padding: 0 15px;
+    margin: 0 auto;
+    position: relative;
+
+    @include horizontal-mobile {
+      max-width: 100%;
+    }
+  }
+
+  .container-basket {
+    width: 100%;
+    max-width: 970px;
+    padding: 0;
+    position: relative;
+
+    @include horizontal-mobile {
+      max-width: 100%;
+    }
+  }
+
+  .disabled {
+    pointer-events: none;
+    opacity: .7 !important;;
+    cursor: not-allowed !important;
+
+    * {
+      pointer-events: none;
+      cursor: not-allowed !important;;
+    }
+  }
+
+  span {
+    font-family: inherit;
+  }
+
+  .btn {
+    padding: 15px 30px;
+    cursor: pointer;
+    border: 2px solid $lightgreen;
+    border-radius: 7px;
+    display: inline-flex;
+    align-items: center;
+
+    &.btn-small {
+      padding: 15px 25px;
+    }
+
+    &.btn-outline {
+      background-color: white;
+
+      span {
+        color: $lightgreen;
+      }
+
+      @include hover {
+        background-color: $lightgreen;
+
+        span {
+          color: white;
+        }
+      }
+    }
+
+    &.btn-default {
+      background-color: $lightgreen;
+
+      span {
+        color: white;
+      }
+
+      @include hover {
+        background-color: white;
+
+        span {
+          color: $lightgreen;
+        }
+      }
+    }
+
+    span {
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 20px;
+
+      + svg {
+        margin-left: 10px;
+      }
+    }
+
+    svg {
+
+      + span {
+        margin-left: 10px;
+      }
+    }
+  }
+}
